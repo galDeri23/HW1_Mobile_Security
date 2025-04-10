@@ -51,8 +51,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.btnLogin.setOnClickListener(v -> {
-            Toast.makeText(this, "Login successful 🎉", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SuccessActivity.class);
+            startActivity(intent);
+            finish();
         });
+
     }
 
     private void setupListeners() {
