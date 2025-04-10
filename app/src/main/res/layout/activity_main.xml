@@ -110,12 +110,22 @@
     </LinearLayout>
 
     <!-- תנאי 5: סיסמה = אחוז סוללה -->
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBatteryRequirement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5. Enter the current battery percentage as password"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp" />
+
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="5. Enter password matches battery%"
+        android:hint="5. Enter password %"
         android:inputType="number"
+        android:minHeight="48dp"
         android:layout_marginBottom="12dp" />
 
     <com.google.android.material.button.MaterialButton
