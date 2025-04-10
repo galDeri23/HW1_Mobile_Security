@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="40dp"
-
+    android:layoutDirection="ltr"
     android:background="#FFFFFF">
 
     <!-- כותרת -->
@@ -22,113 +22,114 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvCamera"
+            android:id="@+id/tvColorCondition"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="1. Color surface detected"
+            android:text="1. Photograph a white surface"
             android:textSize="16sp" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvColorStatus"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="✕"
-            android:textSize="18sp"
-            android:textColor="@color/red" />
+            android:text="picture" />
     </LinearLayout>
 
-    <!-- steps -->
+    <!-- תנאי 2: מחובר ל-WiFi -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvStepsCondition"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="2. Walked at least 5 steps"
-            android:textSize="16sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvStepsStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="✕"
-            android:textSize="18sp"
-            android:textColor="@color/red" />
-    </LinearLayout>
-
-    <!-- battery -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvBatteryCondition"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="3. Password matches battery %"
-            android:textSize="16sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvBatteryStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="✕"
-            android:textSize="18sp"
-            android:textColor="@color/red" />
-    </LinearLayout>
-
-    <!-- WiFi -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvWifiCondition"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="4. Connected to Wi-Fi"
+            android:text="2. Connected to Wi-Fi"
             android:textSize="16sp" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvWifiStatus"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckWifi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="✕"
-            android:textSize="18sp"
-            android:textColor="@color/red" />
+            android:text="Check" />
     </LinearLayout>
 
-    <!-- password -->
-    <EditText
-    android:id="@+id/etPassword"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="48dp"
-    android:hint="Enter battery percentage"
-    android:inputType="number"
-    android:layout_marginBottom="16dp" />
-
-    <!-- login -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+    <!-- בלוטוס פעיל -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:enabled="false"
-        android:text="Login" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvBluetoothCondition"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="3. Bluetooth is active"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheckBluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check" />
+    </LinearLayout>
+
+    <!-- תנאי 4: CAPTCHA אנושי -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCaptchaCondition"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="4. Complete the CAPTCHA"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_CheckCaptcha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="exemption" />
+    </LinearLayout>
+
+    <!-- תנאי 5: סיסמה = אחוז סוללה -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="5. Enter password matches battery%"
+        android:inputType="number"
+        android:layout_marginBottom="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_CheckBattery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check password"
+        android:layout_marginBottom="24dp" />
+
+    <!-- כפתור Login -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:enabled="false" />
 </LinearLayout>
